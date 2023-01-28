@@ -22,7 +22,7 @@ export async function sendProduct(req,res) {
         const item = await productsCollection.findOne({ _id: ObjectId(id) })
         res.send(item).status(200)
     } catch (error) {
-        console.log(err)
+        console.log(error)
         return res.sendStatus(500)
     }
 }
