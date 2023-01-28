@@ -3,12 +3,13 @@ import { cardSchemaValidation } from "../middlewares/checkoutMiddlewares/middlew
 import { adressSchemaValidation } from "../middlewares/checkoutMiddlewares/MiddlewareAdress.js";
 import { adressAdd } from "../controllers/checkoutControllers/adressController.js";
 import { cardAdd } from "../controllers/checkoutControllers/cardController.js";
+import { authRoutesValidation } from "../middlewares/middlewareAuth.js";
 
 const router = Router();
 
 
-router.post("/shipmentinfo", adressSchemaValidation, adressAdd);
-router.post("/paymentinfo", cardSchemaValidation, cardAdd);
+router.post("/shipmentinfo", authRoutesValidation , adressSchemaValidation, adressAdd);
+router.post("/paymentinfo", authRoutesValidation , cardSchemaValidation, cardAdd);
 
 
 

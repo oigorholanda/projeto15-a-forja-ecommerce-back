@@ -15,11 +15,8 @@ try {
 
 export const usersCollection = db.collection("users");
 export const sessionsCollection = db.collection("sessions");
-<<<<<<< HEAD
-export const transactionsCollection = db.collection("transactions");
-export const adressesCollection = db.collection("sessions");
-
-
-=======
 export const productsCollection = db.collection("products");
->>>>>>> f079f0799f5dd11c56827404e3fc1cd06b468389
+export const adressesCollection = db.collection("adresses");
+// export const cardsCollection = db.collection("cards");
+
+
