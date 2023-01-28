@@ -18,12 +18,12 @@ export async function signUp(req, res) {
 
 export async function signIn(req, res) {
   const user = res.locals.user;
-  
+  const { _id } = user
   const token = uuidV4();
 
   try {
     await sessionsCollection.insertOne({ token, userId: user._id });
-    res.send({ token });
+    res.send({ token, _id });
   } catch (err) {
     console.log(err);
     res.sendStatus(500);
