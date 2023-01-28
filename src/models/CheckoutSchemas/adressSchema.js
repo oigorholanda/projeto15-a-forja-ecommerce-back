@@ -5,4 +5,5 @@ export const adressSchema = joi.object({
     houseNumber: joi.number().required(),
     postalCode: joi.number().required(),
     details: joi.string().required(),
+    id: joi.string().required(),
 });
