@@ -7,12 +7,13 @@ dotenv.config();
 const app = express();
 
 import authRoutes from "./routes/authRoutes.js"
+import checkoutRoutes from "./routes/checkoutRoutes.js"
 
 app.use(cors());
 app.use(express.json());
 
 // rotas
-app.use(authRoutes);
+app.use(authRoutes, checkoutRoutes);
 
 // porta e listen
 const PORT = process.env.PORT || 5001;
