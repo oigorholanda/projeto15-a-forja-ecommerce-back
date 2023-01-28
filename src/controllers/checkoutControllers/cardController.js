@@ -1,4 +1,4 @@
 
 export function cardAdd(req, res){
-    console.log ("xablau")
+    res.send("NÃO REGISTRAREMOS SEU CARTÃO").status(200)
 }

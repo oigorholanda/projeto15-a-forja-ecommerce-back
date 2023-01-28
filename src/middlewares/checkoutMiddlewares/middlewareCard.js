@@ -1,9 +1,10 @@
 import { cardSchema } from "../../models/CheckoutSchemas/cardSchema.js"
 
 export function cardSchemaValidation(req, res, next) {
-    const card = req.body;
+    const { cardName, cardNumber, securityNumber, expirationDate } = req.body;
   
-    const { error } = cardSchema.validate(card, { abortEarly: false });
+
+    const { error } = cardSchema.validate({ cardName, cardNumber, securityNumber, expirationDate }, { abortEarly: false });
   
     if (error) {
       const errors = error.details.map((detail) => detail.message);

@@ -2,9 +2,10 @@
 import { adressesCollection } from "../../database/db.js";
 
 export async function adressAdd(req, res){
-    const { streetName, houseNumber, postalCode, details } = req.body
+    const { streetName, houseNumber, postalCode, details, id } = req.body
+
     try {
-        await adressesCollection.insertOne({ streetName, houseNumber, postalCode, details });
+        await adressesCollection.insertOne({ streetName, houseNumber, postalCode, details, id });
         res.sendStatus(201);
       } catch (err) {
         console.log(err);
@@ -13,10 +14,11 @@ export async function adressAdd(req, res){
 }
 
 export async function adressGet(req, res){
-    const { user } = req.body
+    const { id } = req.body
+    // const { _id } = user
     try {
-        await adressesCollection.findOne({ user });
-        res.sendStatus(201);
+        const adress = await adressesCollection.findOne({ id });
+        res.send(adress).status(200);
       } catch (err) {
         console.log(err);
         res.sendStatus(500);
