@@ -14,8 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // rotas
-app.use(authRoutes, checkoutRoutes);
-app.use(productsRoutes)
+app.use(authRoutes, checkoutRoutes, productsRoutes);
 
 // porta e listen
 const PORT = process.env.PORT || 5001;
