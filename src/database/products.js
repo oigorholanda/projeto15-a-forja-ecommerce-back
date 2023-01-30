@@ -2,7 +2,7 @@
 const productsList = [
     {
         id:"1",
-        name:"Hidromel",
+        name:"Hidromel Uruçun",
         category: "Bebidas",
         price: "135.99",
         avaliable:"22",
@@ -18,7 +18,7 @@ const productsList = [
         description:"As Katanas eram usadas tradicionalmente pelos samurais aespada não era apenas um instrumento de matar pessoas, mas sim uma forma de fazer a justiça e ajudar as pessoas. A espada ultrapassava seu sentido material, simbolicamente, era como um instrumento capaz de cortar as impurezas da mente.Alem de ser extremamente valorizada e cobiçada por colecionadores no mundo inteiro."
     },{
         id:"3",
-        name:"Capacete medieval de metal calcasinao - Gauge Steel",
+        name:"Capacete medieval de metal - Gauge Steel",
         category: "Armaduras",
         price: "118.37",
         avaliable:"31",
@@ -46,7 +46,7 @@ const productsList = [
         category:"Outros",
         price:"1659.90",
         avaliable:"1",
-        picture:"https://d2r50eqdykdm5j.cloudfront.net/wp-content/uploads/2020/11/SNMC7601E_L.jpg",
+        picture:"https://trello.com/1/cards/63cf2b0ab4823067a72f868d/attachments/63cf2f700f7b01323d07993a/download/revolver_apachw.jpg",
         description:"Já pensou em atirar, cortar e socar ao mesmo tempo? Pois esse instrumento veio para sanar suas necessidades! Criado pelo mítico Aron Bado em meados do século XIX é um otimo utensílio para quem não sabe o que escolher para atacar o inimigo."
     },{
         id:"7",
@@ -115,7 +115,7 @@ const productsList = [
     },{
         id:"15",
         name:"Arco composto - com flechas",
-        catagory:"Arqueria",
+        category:"Arqueria",
         price: "238.90",
         avaliable:"20",
         picture:"https://p.turbosquid.com/ts-thumb/c8/bNDOTk/8DqIrX28/antiquewoodenbowwitharrows3dsmodel001/jpg/1546426713/1920x1080/fit_q99/dbb0fa609fc4934055cf51cb60986a7d789718c6/antiquewoodenbowwitharrows3dsmodel001.jpg",

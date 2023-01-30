@@ -1,4 +1,4 @@
-import { cardSchema } from "../../models/CheckoutSchemas/cardSchema.js"
+import { cardSchema } from "../../models/CheckoutSchemas/CardSchema.js"
 
 export function cardSchemaValidation(req, res, next) {
     const { cardName, cardNumber, securityNumber, expirationDate, id } = req.body;
