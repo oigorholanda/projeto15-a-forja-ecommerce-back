@@ -15,7 +15,6 @@ export async function adressAdd(req, res){
 
 export async function adressGet(req, res){
     const { id } = req.body
-    // const { _id } = user
     try {
         const adress = await adressesCollection.findOne({ id });
         res.send(adress).status(200);
