@@ -6,7 +6,7 @@ import { authRoutesValidation } from "../middlewares/middlewareAuth.js";
 const router = Router();
 
 router.post("/cart", authRoutesValidation, validateProduct, saveCart)
-router.get("/cart/:id", getCart)
-router.delete("cart/:id", delfromCart)
+router.get("/cart", authRoutesValidation, getCart)
+router.delete("/cart/:id", authRoutesValidation, delfromCart)
 
 export default router;

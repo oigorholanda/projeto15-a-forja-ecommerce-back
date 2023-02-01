@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { cartCollection } from "../database/db.js";
 
 export async function saveCart(req, res) {
@@ -14,11 +15,13 @@ export async function saveCart(req, res) {
 }
 
 export async function getCart(req, res) {
-  const { user } = req.params;
+    const user = res.locals.user
+
+    if (!user) return res.sendStatus(422)
 
   try {
-    await cartCollection.find( {user} ).toArray();
-    res.status(201).send("salvo!");
+    const items = await cartCollection.find( {user: user._id} ).toArray();
+    res.status(201).send(items);
   } catch (error) {
     console.log(error);
     return res.sendStatus(500);
@@ -26,11 +29,12 @@ export async function getCart(req, res) {
 }
 
 export async function delfromCart(req, res) {
-    const { product } = req.params;
+    const  id  = req.params;
+    console.log(id);
   
     try {
-      await cartCollection.deleteOne();
-      res.status(201).send("salvo!");
+      await cartCollection.deleteOne({ _id: ObjectId(id) });
+      res.status(202).send("apagado!");
     } catch (error) {
       console.log(error);
       return res.sendStatus(500);
