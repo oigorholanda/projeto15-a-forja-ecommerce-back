@@ -19,7 +19,7 @@ export async function signUp(req, res) {
 export async function signIn(req, res) {
   const user = res.locals.user;
   const { _id } = user;
-  const { username } = user.name;
+  const username = user.name;
   const token = uuidV4();
 
   try {
