@@ -6,7 +6,7 @@ export async function saveCart(req, res) {
   const user = res.locals.user
 
   try {
-    await cartCollection.insertOne({user:user._id, ...product});
+    await cartCollection.insertOne({user:user._id, ...product}); //! Id precisa ser unico para cada compra, está salvando o ID do produto
     res.status(201).send("salvo!");
   } catch (error) {
     console.log(error);
