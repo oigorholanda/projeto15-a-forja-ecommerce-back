@@ -6,7 +6,7 @@ export async function saveCart(req, res) {
   const user = res.locals.user;
   
   try {
-    await cartCollection.insertOne({ user:user._id, name: product.name, picture:product.picture, price: product.price });
+    await cartCollection.insertOne({ user: user._id, name: product.name, picture: product.picture, price: product.price });
     res.status(201).send("salvo!");
   } catch (error) {
     console.log(error);
