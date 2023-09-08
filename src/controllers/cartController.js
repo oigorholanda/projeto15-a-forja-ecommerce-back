@@ -3,10 +3,10 @@ import { cartCollection } from "../database/db.js";
 
 export async function saveCart(req, res) {
   const product = res.locals.product;
-  const user = res.locals.user
-
+  const user = res.locals.user;
+  
   try {
-    await cartCollection.insertOne({user:user._id, ...product}); //! Id precisa ser unico para cada compra, está salvando o ID do produto
+    await cartCollection.insertOne({ user:user._id, name: product.name, picture:product.picture, price: product.price });
     res.status(201).send("salvo!");
   } catch (error) {
     console.log(error);
